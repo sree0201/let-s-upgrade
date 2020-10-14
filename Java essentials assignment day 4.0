@@ -1,0 +1,143 @@
+Question 1:
+	Create a class Avenger with
+	properties - name, age, power, weapon, planet and with
+	functions - getDetails() and displayDetails().
+	Create 5 objects as an array in the main method and call.
+
+Question 2:
+	Create an int array with 5 values and print only odd values.
+
+Question 3:
+	Create an int array of size 5. Take all the values from the user, add all the values and print the sum.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..............................................................................................................................
+..............................................................................................................................
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+package firstProject;
+import java.util.Scanner;
+
+public class Avenger {
+	
+	String name;
+	int age;
+	String power;
+	String weapon;
+	String planet;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public void getDetails() {
+		System.out.println("Enter avenger's name : ");
+		name = sc.nextLine();
+		System.out.println("Enter avenger's age : ");
+		age = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.println("Enter avenger's power : ");
+		power = sc.nextLine();
+		System.out.println("Enter avenger's weapon : ");
+		weapon = sc.nextLine();
+		System.out.println("Enter avenger's planet : ");
+		planet = sc.nextLine();
+	}
+	
+	public void displayDetails() {
+		System.out.println("Name : " + name);
+		System.out.println("Age : " + age);
+		System.out.println("Power : " + power);
+		System.out.println("Weapon : " + weapon);
+		System.out.println("Planet : " + planet);
+	}
+	
+}
+
+---------------------------------------------------------------------------------------------------------------------
+package firstProject;
+
+public class Main1 {
+
+	public static void main(String[] args) {
+		
+//		Question 1:
+//			Create a class Avenger with
+//			properties - name, age, power, weapon, planet and with
+//			functions - getDetails() and displayDetails().
+//			Create 5 objects as an array in the main method and call.
+		
+		Avenger[] a = new Avenger[5];
+		
+		for(int i = 0; i < 5; i++) {
+			a[i] = new Avenger();
+			a[i].getDetails();
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.println("Details of Avenger #" + (i+1));
+			a[i].displayDetails();
+			System.out.println();
+		}
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+package firstProject;
+import java.util.Scanner;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		
+//		Question 2:
+//			Create an int array with 5 values and print only odd values.
+		
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[5];
+		
+		System.out.println("Enter five numbers ");
+		for(int i = 0; i < 5; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		System.out.println("Odd numbers  are :");
+		for(int i = 0; i < 5; i++) {
+			if (arr[i] % 2 != 0) {
+				System.out.println(arr[i]);
+			}
+		}
+	}
+
+}
+
+
+-------------------------------------------------------------------------------------------
+
+
+package firstProject;
+import java.util.Scanner;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		
+//		Question 3:
+//			Create an int array of size 5.
+//			Take all the values from the user, add all the values and print the sum.
+		
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[5];
+		int sum = 0;
+		
+		System.out.println("Enter five numbers ");
+		for(int i = 0; i < 5; i++) {
+			arr[i] = sc.nextInt();
+			sum = sum + arr[i];
+		}
+		
+		System.out.println("Sum of all five numbers is : " + sum);
+	}
+
+}
